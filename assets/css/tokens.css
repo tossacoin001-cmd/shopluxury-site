@@ -1,0 +1,80 @@
+/* ============================================================
+   SHOPKYLUXURY — DESIGN TOKENS
+   Two curated themes: "noir" (dark, default) and "ivoire" (light).
+   Every component reads ONLY these semantic tokens.
+   Never hardcode a color in main.css or HTML.
+   ============================================================ */
+
+:root{
+  /* type */
+  --serif:'Bodoni Moda', serif;
+  --sans:'Jost', sans-serif;
+
+  /* spacing & rhythm */
+  --pad-x:clamp(18px, 5vw, 56px);
+  --sec-y:clamp(80px, 11vw, 140px);
+  --shell:1280px;
+
+  /* motion */
+  --ease:cubic-bezier(.2,.7,.2,1);
+  --slow:.9s;
+}
+
+/* ---------- NOIR (default) — espresso night, champagne gold ---------- */
+:root,
+:root[data-theme="noir"]{
+  color-scheme:dark;
+
+  --bg:#15100c;            /* page base */
+  --bg-elev:#1e1712;       /* raised panels / alt sections */
+  --ink:#f3ece1;           /* primary text */
+  --muted:#9b8c7a;         /* secondary text */
+  --accent:#c9a24b;        /* champagne gold */
+  --accent-ink:#15100c;    /* text sitting ON accent */
+  --hot:#e8442e;           /* the one coral moment (pulse dot) */
+
+  --line:rgba(201,162,75,.28);
+  --line-faint:rgba(201,162,75,.14);
+  --tint:rgba(201,162,75,.07);        /* accent wash backgrounds */
+  --nav-bg:rgba(21,16,12,.88);
+  --card-glass:rgba(30,23,18,.6);
+
+  /* hero silk gradient stops */
+  --silk-a:rgba(201,162,75,.20);
+  --silk-b:rgba(232,68,46,.10);
+  --silk-c:rgba(64,46,30,.5);
+
+  --photo-shade:rgba(21,16,12,.82);   /* gradient over imagery */
+  --shadow-accent:0 10px 30px rgba(201,162,75,.35);
+}
+
+/* ---------- IVOIRE — daylight boutique, espresso ink, deep gold ---------- */
+:root[data-theme="ivoire"]{
+  color-scheme:light;
+
+  --bg:#f6f0e4;
+  --bg-elev:#fdfaf2;
+  --ink:#241a12;
+  --muted:#8a7864;
+  --accent:#9d7a2b;        /* deepened gold for light-mode contrast */
+  --accent-ink:#fdfaf2;
+  --hot:#d63a25;
+
+  --line:rgba(157,122,43,.38);
+  --line-faint:rgba(157,122,43,.18);
+  --tint:rgba(157,122,43,.07);
+  --nav-bg:rgba(246,240,228,.88);
+  --card-glass:rgba(253,250,242,.65);
+
+  --silk-a:rgba(157,122,43,.18);
+  --silk-b:rgba(214,58,37,.07);
+  --silk-c:rgba(228,214,188,.6);
+
+  --photo-shade:rgba(36,26,18,.74);   /* overlays on photos stay dark for legibility */
+  --shadow-accent:0 10px 30px rgba(157,122,43,.28);
+}
+
+/* smooth theme cross-fade */
+html.theming, html.theming *{
+  transition:background-color .5s ease, color .5s ease, border-color .5s ease !important;
+}

@@ -1,0 +1,19 @@
+# Netlify config — static site + the Ask Doll function.
+# Set ANTHROPIC_API_KEY (and optionally DOLL_MODEL) under
+# Site settings → Environment variables.
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Route the client's /api/doll call to the Netlify function.
+[[redirects]]
+  from = "/api/doll"
+  to = "/.netlify/functions/doll"
+  status = 200
+
+# Serve the branded 404 for unknown paths.
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
