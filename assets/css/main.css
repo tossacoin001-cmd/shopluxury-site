@@ -234,8 +234,6 @@ nav.scrolled,nav.fixed{
 .price-row{display:flex;align-items:baseline;gap:18px;margin:22px 0 8px}
 .price{font-size:20px;letter-spacing:.14em}
 .duties{color:var(--muted);font-size:10px;letter-spacing:.2em}
-.rating{font-size:10px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase;margin-bottom:28px}
-.rating b{color:var(--accent);font-weight:400;letter-spacing:.1em}
 .desc{color:var(--muted);font-size:14px;line-height:1.95;max-width:460px;margin-bottom:34px}
 .desc b{color:var(--ink);font-weight:400}
 .opt-label{display:flex;justify-content:space-between;align-items:baseline;font-size:10px;letter-spacing:.34em;text-transform:uppercase;margin-bottom:14px}
@@ -260,10 +258,6 @@ nav.scrolled,nav.fixed{
 .acc details[open] summary::after{transform:rotate(45deg)}
 .acc .body{padding:0 4px 24px;font-size:13px;line-height:1.9;color:var(--muted);max-width:460px}
 .acc .body b{color:var(--ink);font-weight:400}
-.pull{margin-top:40px;border-left:1px solid var(--accent);padding:6px 0 6px 22px}
-.pull p{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.5}
-.pull cite{display:block;margin-top:12px;font-family:var(--sans);font-style:normal;font-size:9px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted)}
-.pull cite b{color:var(--accent);font-weight:400}
 @media(max-width:920px){.pdp{grid-template-columns:1fr}.gallery{position:static}}
 
 /* ---------- FOOTER ---------- */

@@ -11,15 +11,6 @@
 
   var id = new URLSearchParams(location.search).get('id');
   var p = KY.byId(id) || KY.PRODUCTS[0];
-
-  // deterministic but believable social proof per product
-  function rating(seed) {
-    var h = 0; for (var i = 0; i < seed.length; i++) h = (h * 31 + seed.charCodeAt(i)) >>> 0;
-    var score = (42 + (h % 8)) / 10;            // 4.2–4.9
-    var reviews = 11 + (h % 90);                // 11–100
-    return { score: score.toFixed(1), reviews: reviews };
-  }
-  var rev = rating(p.id);
   var cur = KY.getCurrency();
   var catLabel = (KY.CATEGORIES.find(function (c) { return c.id === p.cats[0]; }) || {}).label || 'The Collection';
   var fullSrc = KY.src(p.images[0]);
@@ -127,7 +118,6 @@
         '<span class="price" data-price="' + p.price + '">' + KY.money(p.price, cur) + '</span>' +
         '<small class="duties">Duties included</small>' +
       '</div>' +
-      '<p class="rating"><b>' + stars(rev.score) + '</b> &nbsp;' + rev.score + ' · ' + rev.reviews + ' reviews</p>' +
       '<p class="desc">' + p.blurb + '</p>' +
       '<div class="opt-label"><span>Select size</span><a href="care.html#sizing">Size guide</a></div>' +
       '<div class="sizes" id="sizes">' + sizeHTML + '</div>' +
@@ -143,8 +133,6 @@
         '<details><summary>Fit &amp; care</summary><div class="body">True to size with a sculpting line. Dry clean only — <b>she\'s worth it</b>. Steam, never iron, any embellishment.</div></details>' +
         '<details><summary>Delivery &amp; returns</summary><div class="body">Lagos: same-day before 2 PM. Nigeria: 1–3 days. Worldwide: 5–9 days, tracked. Exchanges within <b>7 days</b>, unworn with tags. <a href="care.html#returns">Full policy</a>.</div></details>' +
       '</div>' +
-      '<blockquote class="pull"><p>"The best fashion store… statement pieces, every time."</p>' +
-      '<cite><b>★★★★★</b> &nbsp;Verified Google review</cite></blockquote>' +
     '</div>';
 
   // related rail
@@ -208,7 +196,6 @@
     name: p.name, image: p.images.map(function (im) { return KY.src(im); }),
     description: p.blurb, brand: { '@type': 'Brand', name: 'SHOPKYLUXURY' },
     sku: p.id,
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: rev.score, reviewCount: rev.reviews },
     offers: {
       '@type': 'Offer', priceCurrency: 'USD', price: p.price,
       availability: 'https://schema.org/InStock',
@@ -226,9 +213,5 @@
     if (parts.length === 1) return '<em>' + name + '</em>';
     var last = parts.pop();
     return parts.join(' ') + ' <em>' + last + '</em>';
-  }
-  function stars(score) {
-    var full = Math.floor(score);
-    return '★★★★★'.slice(0, full) + '☆☆☆☆☆'.slice(0, 5 - full);
   }
 })();
