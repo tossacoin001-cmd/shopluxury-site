@@ -147,7 +147,7 @@
         '</div>' +
         '<footer class="bag-foot">' +
           '<div class="bag-row"><span>Subtotal</span><b class="bag-sum"></b></div>' +
-          '<p class="bag-fine">No payment here — checkout sends your order <b>and</b> delivery address to our WhatsApp concierge to confirm.</p>' +
+          '<p class="bag-fine">No payment here. Checkout sends your order <b>and</b> delivery address to our WhatsApp concierge to confirm.</p>' +
           '<p class="bag-err" hidden></p>' +
           '<a class="btn solid wide bag-checkout" href="#">Checkout on WhatsApp</a>' +
           '<button class="btn wide bag-keep">Keep shopping</button>' +
@@ -231,7 +231,7 @@
       box.innerHTML = bag.map(function (i) {
         var p = KY.byId(i.id); if (!p) return '';
         var img = KY.card(p.images[0]);
-        var meta = 'Size ' + (i.size || '—') + (i.color ? ' · ' + i.color : '');
+        var meta = 'Size ' + (i.size || 'One size') + (i.color ? ' · ' + i.color : '');
         var d = 'data-id="' + p.id + '" data-sz="' + (i.size || '') + '" data-co="' + (i.color || '') + '"';
         return '' +
           '<div class="bag-item">' +
@@ -295,15 +295,15 @@
     var cur = KY.getCurrency();
     var lines = bag.map(function (i) {
       var p = KY.byId(i.id); if (!p) return '';
-      var opt = 'Size ' + (i.size || '—') + (i.color ? ', ' + i.color : '');
+      var opt = 'Size ' + (i.size || 'One size') + (i.color ? ', ' + i.color : '');
       return '• ' + p.name + ' (' + opt + ') ×' + i.qty +
-        ' — ' + KY.money(p.price * i.qty, cur);
+        ' · ' + KY.money(p.price * i.qty, cur);
     }).filter(Boolean);
 
     var msg = "Hello SHOPKYLUXURY, I'd like to place an order:\n\n" +
       lines.join('\n') +
       '\n\nSubtotal: ' + KY.money(KY.bagTotal(), cur) +
-      '\n\n— Delivery details —' +
+      '\n\nDelivery details:' +
       '\nName: ' + ship.name +
       '\nPhone: ' + ship.phone +
       (ship.email ? '\nEmail: ' + ship.email : '') +

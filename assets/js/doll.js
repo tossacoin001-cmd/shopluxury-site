@@ -132,7 +132,7 @@
   }
 
   function greet() {
-    add('doll', "Hey doll — I'm <b>Doll</b>, your SHOPKYLUXURY stylist. Tell me the occasion — owambe, dinner, vacation, the boardroom — or a piece you have your eye on, and I'll sort you out.", true);
+    add('doll', "Hey doll, I'm <b>Doll</b>, your SHOPKYLUXURY stylist. Tell me the occasion (owambe, dinner, vacation, the boardroom) or a piece you have your eye on, and I'll sort you out.", true);
     chips(['Owambe looks', 'Under $150', 'Shipping & returns', 'Talk to a human']);
   }
 
@@ -211,10 +211,10 @@
 
     // human / order / complaint → WhatsApp
     if (has('human', 'agent', 'someone', 'person', 'representative', 'complain', 'complaint', 'wrong', 'refund my', 'speak to', 'talk to', 'call')) {
-      return H("Of course, doll — let me put you with a stylist who'll take care of it personally. " + waBtn('Chat on WhatsApp'));
+      return H("Of course, doll. Let me put you with a stylist who'll take care of it personally. " + waBtn('Chat on WhatsApp'));
     }
     if (has('buy', 'order', 'purchase', 'checkout', 'pay', 'payment', 'how do i get', 'how can i get')) {
-      return H("Easy — add your piece to the bag and checkout opens a WhatsApp chat with your order ready to send. You can pay by transfer, card, or on delivery in Lagos. Want to do it now? " + waBtn('Order on WhatsApp'));
+      return H("Easy. Add your piece to the bag and checkout opens a WhatsApp chat with your order ready to send. You can pay by transfer, card, or on delivery in Lagos. Want to do it now? " + waBtn('Order on WhatsApp'));
     }
     // shipping
     if (has('ship', 'deliver', 'delivery', 'how long', 'when will', 'arrive', 'worldwide', 'international', 'abroad')) {
@@ -230,7 +230,7 @@
     }
     // store / visit
     if (has('store', 'shop location', 'address', 'visit', 'where are you', 'location', 'open', 'hour', 'boutique', 'appointment')) {
-      return H("Come see us at <b>30B Admiralty Way, Lekki Phase 1, Lagos</b> — open daily, 10am–8pm. Private appointments are a thing (champagne optional, encouraged). Book one through the concierge. " + waBtn('Book an appointment'));
+      return H("Come see us at <b>30B Admiralty Way, Lekki Phase 1, Lagos</b>, open daily, 10am–8pm. Private appointments are a thing (champagne optional, encouraged). Book one through the concierge. " + waBtn('Book an appointment'));
     }
     // occasion recs
     if (has('owambe', 'aso ebi', 'aso-ebi', 'party', 'wedding', 'event')) {
@@ -239,7 +239,7 @@
     }
     if (has('dinner', 'date', 'restaurant')) {
       var r2 = recommend('dinner', 3);
-      if (r2.length) return H(recHtml(r2, "For dinner — elegant, a little dangerous:") + '<p>Shall I check your size on any of these?</p>');
+      if (r2.length) return H(recHtml(r2, "For dinner, elegant and a little dangerous:") + '<p>Shall I check your size on any of these?</p>');
     }
     if (has('vacation', 'beach', 'holiday', 'resort', 'soft life', 'travel')) {
       var r3 = recommend('vacation', 3);
@@ -253,11 +253,11 @@
     var prod = findProduct(t);
     if (prod) {
       var sizes = prod.sizes && prod.sizes.length ? ' She comes in ' + prod.sizes.join(', ') + '.' : '';
-      return H("<b>" + esc(prod.name) + "</b> — " + money(prod.price) + "." + sizes + " " + esc(prod.blurb || '') + ' ' + plink(prod) + ' · <a href="product.html?id=' + prod.id + '">view &amp; add to bag</a>');
+      return H("<b>" + esc(prod.name) + "</b> · " + money(prod.price) + "." + sizes + " " + esc(prod.blurb || '') + ' ' + plink(prod) + ' · <a href="product.html?id=' + prod.id + '">view &amp; add to bag</a>');
     }
     if (has('kaftan', 'abaya')) {
       var rk = (KY.PRODUCTS || []).filter(function (p) { return p.cats.indexOf('kaftans') > -1; }).slice(0, 3);
-      if (rk.length) return H(recHtml(rk, "Our kaftans &amp; abayas — Dubai silk, feathers, beadwork:"));
+      if (rk.length) return H(recHtml(rk, "Our kaftans &amp; abayas, in Dubai silk, feathers, and beadwork:"));
     }
     // budget
     var mUnder = t.match(/under\s*\$?\s*(\d+)/) || t.match(/below\s*\$?\s*(\d+)/) || t.match(/less than\s*\$?\s*(\d+)/);
@@ -274,13 +274,13 @@
     }
     // greeting / thanks
     if (has('hi', 'hello', 'hey', 'good morning', 'good afternoon', 'good evening', 'how are you')) {
-      return H("Hey doll. What are we dressing for today — an occasion, or a piece you've seen?");
+      return H("Hey doll. What are we dressing for today: an occasion, or a piece you've seen?");
     }
     if (has('thank', 'thanks', 'thank you', 'love it', 'perfect')) {
       return H("Anytime, doll. I'm right here when you're ready.");
     }
     // fallback
-    return H("I want to get this exactly right for you, doll. Tell me the occasion or the piece — or I'll connect you to a stylist who can help with anything. <a href=\"shop.html\">Browse the collection</a> or " + waBtn('chat on WhatsApp'));
+    return H("I want to get this exactly right for you, doll. Tell me the occasion or the piece, or I'll connect you to a stylist who can help with anything. <a href=\"shop.html\">Browse the collection</a> or " + waBtn('chat on WhatsApp'));
   }
 
   /* ---------- boot ---------- */

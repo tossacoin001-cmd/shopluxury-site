@@ -16,9 +16,9 @@
   var fullSrc = KY.src(p.images[0]);
 
   /* ---------- <head> + SEO ---------- */
-  document.title = p.name + ' — SHOPKYLUXURY';
+  document.title = p.name + ' | SHOPKYLUXURY';
   setMeta('description', p.blurb + ' ' + KY.usd(p.price) + '. Worldwide delivery from Lagos.');
-  setProp('og:title', p.name + ' — SHOPKYLUXURY');
+  setProp('og:title', p.name + ' | SHOPKYLUXURY');
   setProp('og:description', p.blurb);
   setProp('og:image', fullSrc);
   setLink('canonical', 'https://shopkyluxury.com/product.html?id=' + p.id);
@@ -75,7 +75,7 @@
   var colorBlock = '';
   if (p.colors && p.colors.length) {
     colorBlock =
-      '<div class="opt-label"><span>Colour — <i class="opt-val" id="colorVal">' + p.colors[0] + '</i></span></div>' +
+      '<div class="opt-label"><span>Colour: <i class="opt-val" id="colorVal">' + p.colors[0] + '</i></span></div>' +
       '<div class="colors" id="colors">' +
         p.colors.map(function (c, idx) {
           return '<button class="' + (idx === 0 ? 'on' : '') + '" data-color="' + c + '" title="' + c + '"><span class="sw" data-c="' + c.toLowerCase().replace(/\s+/g, '') + '"></span>' + c + '</button>';
@@ -124,13 +124,13 @@
       '<p class="fit-note"><i>True to size.</i> Between sizes? Your stylist will advise on WhatsApp.</p>' +
       colorBlock +
       '<div class="ctas">' +
-        '<button class="btn solid wide" id="addBtn">Add to bag — <span data-price="' + p.price + '">' + KY.money(p.price, cur) + '</span></button>' +
+        '<button class="btn solid wide" id="addBtn">Add to bag · <span data-price="' + p.price + '">' + KY.money(p.price, cur) + '</span></button>' +
         '<a class="btn wide" id="waOrder" href="#">Order via WhatsApp Concierge</a>' +
       '</div>' +
       '<div class="promise"><span>Same-day Lagos</span><span>Worldwide shipping</span><span>Easy exchanges</span></div>' +
       '<div class="acc">' +
-        '<details open><summary>The details</summary><div class="body">' + p.blurb + ' Designed in <b>Lagos</b>. Each piece is a limited run — when she\'s gone, she\'s gone.</div></details>' +
-        '<details><summary>Fit &amp; care</summary><div class="body">True to size with a sculpting line. Dry clean only — <b>she\'s worth it</b>. Steam, never iron, any embellishment.</div></details>' +
+        '<details open><summary>The details</summary><div class="body">' + p.blurb + ' Designed in <b>Lagos</b>. Each piece is a limited run. When she\'s gone, she\'s gone.</div></details>' +
+        '<details><summary>Fit &amp; care</summary><div class="body">True to size with a sculpting line. Dry clean only. <b>She\'s worth it</b>. Steam, never iron, any embellishment.</div></details>' +
         '<details><summary>Delivery &amp; returns</summary><div class="body">Lagos: same-day before 2 PM. Nigeria: 1–3 days. Worldwide: 5–9 days, tracked. Exchanges within <b>7 days</b>, unworn with tags. <a href="care.html#returns">Full policy</a>.</div></details>' +
       '</div>' +
     '</div>';
@@ -182,7 +182,7 @@
   document.getElementById('waOrder').addEventListener('click', function (e) {
     e.preventDefault();
     var opt = 'Size ' + selSize + (selColor ? ', ' + selColor : '');
-    var msg = "Hello SHOPKYLUXURY, I'm interested in the " + p.name + ' (' + opt + ') — ' +
+    var msg = "Hello SHOPKYLUXURY, I'm interested in the " + p.name + ' (' + opt + '), ' +
       KY.money(p.price, KY.getCurrency()) + '.\n\nIs she available?';
     window.open('https://wa.me/' + KY.WA + '?text=' + encodeURIComponent(msg), '_blank');
   });

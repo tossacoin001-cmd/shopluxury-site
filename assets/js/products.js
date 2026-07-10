@@ -59,7 +59,7 @@ KY.PRODUCTS = [
     id:"aminat-knosh-dress", name:"Aminat Knosh", price:285,
     cats:["dresses"], occasions:["owambe", "dinner"], badge:"New",
     sizes:["S", "M", "L", "XL", "XXL", "XXXL"], colors:[],
-    blurb:"Floor-sweeping drama, quietly. She never asks for the room — the room turns.",
+    blurb:"Floor-sweeping drama, quietly. She never asks for the room. The room turns.",
     images:[[[300, "2026/05/1000608587-300x450.jpg"], [600, "2026/05/1000608587-600x900.jpg"], [683, "2026/05/1000608587-683x1024.jpg"], [768, "2026/05/1000608587-768x1152.jpg"], [1024, "2026/05/1000608587.jpg"]]]
   },
   {
@@ -122,7 +122,7 @@ KY.PRODUCTS = [
     id:"neinay-dress", name:"Neinay", price:95,
     cats:["dresses", "evening"], occasions:["dinner", "owambe"], badge:"New",
     sizes:["S", "M", "L", "XL"], colors:[],
-    blurb:"Black, embellished, bodycon. Rich and certain — for the night that's about her.",
+    blurb:"Black, embellished, bodycon. Rich and certain, for the night that's about her.",
     images:[[[300, "2026/05/IMG-20260530-WA0031-300x451.jpg"], [600, "2026/05/IMG-20260530-WA0031-600x901.jpg"], [682, "2026/05/IMG-20260530-WA0031-682x1024.jpg"], [768, "2026/05/IMG-20260530-WA0031-768x1154.jpg"], [1023, "2026/05/IMG-20260530-WA0031.jpg"]]]
   },
   {

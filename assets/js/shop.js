@@ -52,7 +52,7 @@
       list.length + (list.length === 1 ? ' piece' : ' pieces');
     grid.innerHTML = list.length
       ? list.map(card).join('')
-      : '<p class="shop-empty">Nothing in this edit yet — try another filter.</p>';
+      : '<p class="shop-empty">Nothing in this edit yet. Try another filter.</p>';
 
     // active pills
     document.querySelectorAll('[data-filter-cat]').forEach(function (b) {
