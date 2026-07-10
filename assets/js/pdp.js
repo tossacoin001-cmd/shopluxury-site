@@ -21,7 +21,7 @@
   setProp('og:title', p.name + ' | SHOPKYLUXURY');
   setProp('og:description', p.blurb);
   setProp('og:image', fullSrc);
-  setLink('canonical', 'https://shopkyluxury.com/product.html?id=' + p.id);
+  setLink('canonical', 'https://shopkyluxury.com/product?id=' + p.id);
 
   function setMeta(name, val) {
     var m = document.querySelector('meta[name="' + name + '"]');
@@ -42,8 +42,8 @@
   /* ---------- breadcrumb ---------- */
   var crumb = document.getElementById('crumb');
   if (crumb) crumb.innerHTML =
-    '<a href="index.html">Home</a><i>/</i>' +
-    '<a href="shop.html?cat=' + p.cats[0] + '">' + catLabel + '</a><i>/</i>' +
+    '<a href="/">Home</a><i>/</i>' +
+    '<a href="/shop?cat=' + p.cats[0] + '">' + catLabel + '</a><i>/</i>' +
     '<span class="here">' + p.name + '</span>';
 
   /* ---------- gallery ---------- */
@@ -94,7 +94,7 @@
   }
   var relHTML = related.map(function (x) {
     var v = x.images[0];
-    return '<a class="card" href="product.html?id=' + x.id + '">' +
+    return '<a class="card" href="/product?id=' + x.id + '">' +
       '<div class="ph"><img loading="lazy" src="' + KY.card(v) + '" srcset="' + KY.srcset(v) +
       '" sizes="(max-width:560px) 50vw, 280px" alt="' + x.name + '"></div>' +
       '<div class="meta"><span class="nm">' + x.name + '</span>' +
@@ -119,7 +119,7 @@
         '<small class="duties">Duties included</small>' +
       '</div>' +
       '<p class="desc">' + p.blurb + '</p>' +
-      '<div class="opt-label"><span>Select size</span><a href="care.html#sizing">Size guide</a></div>' +
+      '<div class="opt-label"><span>Select size</span><a href="/care#sizing">Size guide</a></div>' +
       '<div class="sizes" id="sizes">' + sizeHTML + '</div>' +
       '<p class="fit-note"><i>True to size.</i> Between sizes? Your stylist will advise on WhatsApp.</p>' +
       colorBlock +
@@ -131,7 +131,7 @@
       '<div class="acc">' +
         '<details open><summary>The details</summary><div class="body">' + p.blurb + ' Designed in <b>Lagos</b>. Each piece is a limited run. When she\'s gone, she\'s gone.</div></details>' +
         '<details><summary>Fit &amp; care</summary><div class="body">True to size with a sculpting line. Dry clean only. <b>She\'s worth it</b>. Steam, never iron, any embellishment.</div></details>' +
-        '<details><summary>Delivery &amp; returns</summary><div class="body">Lagos: same-day before 2 PM. Nigeria: 1–3 days. Worldwide: 5–9 days, tracked. Exchanges within <b>7 days</b>, unworn with tags. <a href="care.html#returns">Full policy</a>.</div></details>' +
+        '<details><summary>Delivery &amp; returns</summary><div class="body">Lagos: same-day before 2 PM. Nigeria: 1–3 days. Worldwide: 5–9 days, tracked. Exchanges within <b>7 days</b>, unworn with tags. <a href="/care#returns">Full policy</a>.</div></details>' +
       '</div>' +
     '</div>';
 
@@ -199,7 +199,7 @@
     offers: {
       '@type': 'Offer', priceCurrency: 'USD', price: p.price,
       availability: 'https://schema.org/InStock',
-      url: 'https://shopkyluxury.com/product.html?id=' + p.id
+      url: 'https://shopkyluxury.com/product?id=' + p.id
     }
   };
   var s = document.createElement('script');

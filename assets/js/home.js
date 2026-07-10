@@ -14,7 +14,7 @@
   if (rail) {
     rail.innerHTML = KY.PRODUCTS.slice(0, 8).map(function (p) {
       var v = p.images[0];
-      return '<a class="card" href="product.html?id=' + p.id + '">' +
+      return '<a class="card" href="/product?id=' + p.id + '">' +
         '<div class="ph">' + (p.badge ? '<span class="tag">' + p.badge + '</span>' : '') +
           '<img loading="lazy" src="' + KY.card(v) + '" srcset="' + KY.srcset(v) +
           '" sizes="(max-width:560px) 72vw, 280px" alt="' + p.name + '"></div>' +

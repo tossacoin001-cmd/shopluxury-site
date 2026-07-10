@@ -237,7 +237,7 @@
           '<div class="bag-item">' +
             '<img class="bag-thumb" src="' + img + '" alt="' + p.name + '" loading="lazy">' +
             '<div class="bag-info">' +
-              '<a class="bag-nm" href="product.html?id=' + p.id + '">' + p.name + '</a>' +
+              '<a class="bag-nm" href="/product?id=' + p.id + '">' + p.name + '</a>' +
               '<span class="bag-sz">' + meta + '</span>' +
               '<div class="bag-qty">' +
                 '<button class="qd" ' + d + ' aria-label="Decrease quantity">−</button>' +

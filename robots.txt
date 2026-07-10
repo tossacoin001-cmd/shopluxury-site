@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /legal.html
+Disallow: /legal
 
 Sitemap: https://shopkyluxury.com/sitemap.xml

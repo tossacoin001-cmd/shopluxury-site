@@ -35,7 +35,7 @@
     var v = p.images[0];
     var cur = KY.getCurrency();
     return '' +
-      '<a class="card reveal in" href="product.html?id=' + p.id + '">' +
+      '<a class="card reveal in" href="/product?id=' + p.id + '">' +
         '<div class="ph">' +
           (p.badge ? '<span class="tag">' + p.badge + '</span>' : '') +
           '<img loading="lazy" src="' + KY.card(v) + '" srcset="' + KY.srcset(v) + '" ' +

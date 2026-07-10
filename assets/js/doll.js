@@ -23,7 +23,7 @@
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
   function money(n) { return KY.money ? KY.money(n, KY.getCurrency ? KY.getCurrency() : 'usd') : ('$' + n); }
-  function plink(p) { return '<a href="product.html?id=' + p.id + '">' + esc(p.name) + '</a>'; }
+  function plink(p) { return '<a href="/product?id=' + p.id + '">' + esc(p.name) + '</a>'; }
   function waLink(text) {
     return 'https://wa.me/' + WA + (text ? '?text=' + encodeURIComponent(text) : '');
   }
@@ -226,7 +226,7 @@
     }
     // sizing
     if (has('size', 'fit', 'measurement', 'measure', 'true to size', 'what size', 'bust', 'waist', 'hip')) {
-      return H("Our pieces run <b>true to size</b>. Between two? Size up for comfort, or share your bust/waist/hip and I'll tell you exactly which. Full chart here: <a href=\"care.html#sizing\">size guide</a>.");
+      return H("Our pieces run <b>true to size</b>. Between two? Size up for comfort, or share your bust/waist/hip and I'll tell you exactly which. Full chart here: <a href=\"/care#sizing\">size guide</a>.");
     }
     // store / visit
     if (has('store', 'shop location', 'address', 'visit', 'where are you', 'location', 'open', 'hour', 'boutique', 'appointment')) {
@@ -253,7 +253,7 @@
     var prod = findProduct(t);
     if (prod) {
       var sizes = prod.sizes && prod.sizes.length ? ' She comes in ' + prod.sizes.join(', ') + '.' : '';
-      return H("<b>" + esc(prod.name) + "</b>, " + money(prod.price) + "." + sizes + " " + esc(prod.blurb || '') + ' ' + plink(prod) + '. <a href="product.html?id=' + prod.id + '">View &amp; add to bag</a>');
+      return H("<b>" + esc(prod.name) + "</b>, " + money(prod.price) + "." + sizes + " " + esc(prod.blurb || '') + ' ' + plink(prod) + '. <a href="/product?id=' + prod.id + '">View &amp; add to bag</a>');
     }
     if (has('kaftan', 'abaya')) {
       var rk = (KY.PRODUCTS || []).filter(function (p) { return p.cats.indexOf('kaftans') > -1; }).slice(0, 3);
@@ -270,7 +270,7 @@
     // dresses / shop general
     if (has('dress', 'gown', 'outfit', 'something', 'recommend', 'suggest', 'show me', 'looking for', 'new')) {
       var rd = (KY.PRODUCTS || []).slice(0, 3);
-      return H(recHtml(rd, "A few of the pieces women keep coming back for:") + '<p>Or tell me the occasion and I\'ll style you properly. <a href="shop.html">See everything</a>.</p>');
+      return H(recHtml(rd, "A few of the pieces women keep coming back for:") + '<p>Or tell me the occasion and I\'ll style you properly. <a href="/shop">See everything</a>.</p>');
     }
     // greeting / thanks
     if (has('hi', 'hello', 'hey', 'good morning', 'good afternoon', 'good evening', 'how are you')) {
@@ -280,7 +280,7 @@
       return H("Anytime, doll. I'm right here when you're ready.");
     }
     // fallback
-    return H("I want to get this exactly right for you, doll. Tell me the occasion or the piece, or I'll connect you to a stylist who can help with anything. <a href=\"shop.html\">Browse the collection</a> or " + waBtn('chat on WhatsApp'));
+    return H("I want to get this exactly right for you, doll. Tell me the occasion or the piece, or I'll connect you to a stylist who can help with anything. <a href=\"/shop\">Browse the collection</a> or " + waBtn('chat on WhatsApp'));
   }
 
   /* ---------- boot ---------- */
