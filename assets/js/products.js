@@ -19,7 +19,7 @@ KY.CATEGORIES = [
 ];
 
 KY.OCCASIONS = [
-  { id:'owambe',    label:'The Owambe',  note:'Aso-ebi adjacent · steal the aux' },
+  { id:'owambe',    label:'The Owambe',  note:'Aso-ebi adjacent. Steal the aux.' },
   { id:'dinner',    label:'Dinner Date', note:'Make him forget the menu' },
   { id:'vacation',  label:'Vacation Mode', note:'Zanzibar, Santorini, soft life' },
   { id:'boardroom', label:'The Boardroom', note:'But make it fashion' }

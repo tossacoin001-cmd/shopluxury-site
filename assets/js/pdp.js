@@ -124,7 +124,7 @@
       '<p class="fit-note"><i>True to size.</i> Between sizes? Your stylist will advise on WhatsApp.</p>' +
       colorBlock +
       '<div class="ctas">' +
-        '<button class="btn solid wide" id="addBtn">Add to bag · <span data-price="' + p.price + '">' + KY.money(p.price, cur) + '</span></button>' +
+        '<button class="btn solid wide" id="addBtn">Add to bag (<span data-price="' + p.price + '">' + KY.money(p.price, cur) + '</span>)</button>' +
         '<a class="btn wide" id="waOrder" href="#">Order via WhatsApp Concierge</a>' +
       '</div>' +
       '<div class="promise"><span>Same-day Lagos</span><span>Worldwide shipping</span><span>Easy exchanges</span></div>' +

@@ -117,8 +117,7 @@ nav.scrolled,nav.fixed{
 }
 @keyframes silk{from{transform:translate(0,0) scale(1)}to{transform:translate(-3%,2%) scale(1.06)}}
 .hero-grid{position:relative;z-index:2;width:100%;max-width:var(--shell);margin:0 auto;display:grid;grid-template-columns:1.4fr .9fr;gap:48px;align-items:center}
-.eyebrow{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;display:flex;align-items:center;gap:16px}
-.eyebrow::before{content:'';width:44px;height:1px;background:var(--accent)}
+.eyebrow{font-size:10px;letter-spacing:.5em;text-transform:uppercase;color:var(--accent);margin-bottom:28px}
 .hero-sub{margin-top:30px;max-width:420px;color:var(--muted);font-size:15px;line-height:1.8}
 .hero-ctas{margin-top:44px;display:flex;gap:18px;flex-wrap:wrap}
 .hero-card{position:relative;justify-self:end;width:min(320px,80%);transform:rotate(3deg);animation:floaty 7s ease-in-out infinite}
@@ -173,7 +172,6 @@ nav.scrolled,nav.fixed{
 .portrait img{aspect-ratio:3/3.8;object-fit:cover;width:100%}
 .portrait::before{content:'';position:absolute;inset:-16px 16px 16px -16px;border:1px solid var(--line);pointer-events:none}
 .portrait .stamp{position:absolute;right:-14px;bottom:-14px;background:var(--accent);color:var(--accent-ink);font-size:9px;letter-spacing:.3em;text-transform:uppercase;padding:12px 18px}
-.woman h2{margin-bottom:30px}
 .story{color:var(--muted);font-size:15px;line-height:2;max-width:440px}
 .story b{color:var(--ink);font-weight:400}
 .sig{margin-top:36px;font-family:var(--serif);font-style:italic;font-size:21px;color:var(--accent)}
@@ -191,16 +189,6 @@ nav.scrolled,nav.fixed{
 @media(max-width:560px){.conc-grid{grid-template-columns:1fr}}
 
 /* ---------- OCCASIONS ---------- */
-.occ-wrap{display:flex;flex-direction:column;border-top:1px solid var(--line)}
-.occ{display:flex;align-items:center;justify-content:space-between;padding:30px 8px;border-bottom:1px solid var(--line);transition:padding .35s ease,background .35s ease}
-.occ:hover{background:var(--tint);padding-left:24px}
-.occ .t{font-family:var(--serif);font-size:clamp(26px,4vw,44px)}
-.occ:hover .t{font-style:italic;color:var(--accent)}
-.occ .d{font-size:10px;letter-spacing:.34em;text-transform:uppercase;color:var(--muted);text-align:right}
-.occ .arr{font-family:var(--serif);font-size:24px;color:var(--accent);margin-left:26px;opacity:0;transform:translateX(-10px);transition:all .35s ease}
-.occ:hover .arr{opacity:1;transform:none}
-.occ-right{display:flex;align-items:center}
-
 /* occasion cards — full editorial tiles (occasions.html) */
 .occ-cards{display:grid;grid-template-columns:1fr 1fr;gap:18px}
 .occ-card{position:relative;overflow:hidden;aspect-ratio:4/5;background:var(--bg-elev);display:block}

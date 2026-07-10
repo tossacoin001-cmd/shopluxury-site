@@ -253,7 +253,7 @@
     var prod = findProduct(t);
     if (prod) {
       var sizes = prod.sizes && prod.sizes.length ? ' She comes in ' + prod.sizes.join(', ') + '.' : '';
-      return H("<b>" + esc(prod.name) + "</b> · " + money(prod.price) + "." + sizes + " " + esc(prod.blurb || '') + ' ' + plink(prod) + ' · <a href="product.html?id=' + prod.id + '">view &amp; add to bag</a>');
+      return H("<b>" + esc(prod.name) + "</b>, " + money(prod.price) + "." + sizes + " " + esc(prod.blurb || '') + ' ' + plink(prod) + '. <a href="product.html?id=' + prod.id + '">View &amp; add to bag</a>');
     }
     if (has('kaftan', 'abaya')) {
       var rk = (KY.PRODUCTS || []).filter(function (p) { return p.cats.indexOf('kaftans') > -1; }).slice(0, 3);

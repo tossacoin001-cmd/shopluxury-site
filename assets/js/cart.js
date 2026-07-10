@@ -297,7 +297,7 @@
       var p = KY.byId(i.id); if (!p) return '';
       var opt = 'Size ' + (i.size || 'One size') + (i.color ? ', ' + i.color : '');
       return '• ' + p.name + ' (' + opt + ') ×' + i.qty +
-        ' · ' + KY.money(p.price * i.qty, cur);
+        ': ' + KY.money(p.price * i.qty, cur);
     }).filter(Boolean);
 
     var msg = "Hello SHOPKYLUXURY, I'd like to place an order:\n\n" +
